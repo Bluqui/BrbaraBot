@@ -1,11 +1,3 @@
-Write-Host "Adicionando todos os arquivos" -ForegroundColor Cyan
-git add ./
-Write-Host "`nFazendo Commit" -ForegroundColor Blue
-git commit -m "0.1.0"
-Write-Host "`nDando o Push" -ForegroundColor DarkBlue
-git push
-Write-Host "`n"
-
 Write-Host "Registrar os ShashCommands?" -ForegroundColor Cyan
 do {
     $confirmSlashDeploy = Read-Host "[y] - [n]"
@@ -17,6 +9,14 @@ do {
     } else {}
 } while ($confirmSlashDeploy -ne 'Y' -and $confirmSlashDeploy -ne 'N')
 
+Write-Host "Adicionando todos os arquivos" -ForegroundColor Cyan
+git add ./
+Write-Host "`nFazendo Commit" -ForegroundColor Blue
+git commit -m "0.1.0"
+Write-Host "`nDando o Push" -ForegroundColor DarkBlue
+git push
+Write-Host "`n"
+
 Write-Host "Iniciar?" -ForegroundColor Cyan
 do {
     $confirmIni = Read-Host "[y] - [n]"
@@ -26,4 +26,4 @@ do {
     } elseif ($confirmIni -eq 'N'){
         Write-Host "Inicialização cacelada"
     } else {}
-} while ($confirmIn -ne 'Y' -and $confirmIn -ne 'N')
+} while ($confirmIni -ne 'Y' -and $confirmIni -ne 'N')
