@@ -2,4 +2,3 @@ node_modules
 .env
 .eslintrc
 config.json
-deploy.ps1
