@@ -18,10 +18,12 @@ do {
 } while ($confirmSlashDeploy -ne 'Y' -and $confirmSlashDeploy -ne 'N')
 
 Write-Host "Iniciar?" -ForegroundColor Cyan
-$confirmIni = Read-Host "[y] - [n]"
-if ($confirmIni -eq 'Y') {
-    Write-Host "Iniciando..."
-    node .\main\index.js
-} elseif ($confirmIni -eq 'N'){
-    Write-Host "Inicialização cacelada"
-} else {}
+do {
+    $confirmIni = Read-Host "[y] - [n]"
+    if ($confirmIni -eq 'Y') {
+        Write-Host "Iniciando..."
+        node .\main\index.js
+    } elseif ($confirmIni -eq 'N'){
+        Write-Host "Inicialização cacelada"
+    } else {}
+} while ($confirmSlashDeploy -ne 'Y' -and $confirmSlashDeploy -ne 'N')
