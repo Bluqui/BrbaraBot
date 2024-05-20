@@ -7,15 +7,15 @@ git push
 Write-Host "`n"
 
 Write-Host "Registrar os ShashCommands?" -ForegroundColor Cyan
-$confirmSlashDeploy = Read-Host "[y] - [n]"
-while(confirmSlashDeploy -ne "Y" -and confirmSlashDeploy -ne "N"){
+do {
+    $confirmSlashDeploy = Read-Host "[y] - [n]"
     if ($confirmSlashDeploy -eq 'Y') {
-    Write-Host "Registrando ShashCommands..."
-    node .\main\deploy-commands.js
+        Write-Host "Registrando ShashCommands..."
+        node .\main\deploy-commands.js
     } elseif ($confirmSlashDeploy -eq 'N'){
         Write-Host "Registro cancelado"
     } else {}
-}
+} while ($confirmSlashDeploy -ne 'Y' -and $confirmSlashDeploy -ne 'N')
 
 Write-Host "Iniciar?" -ForegroundColor Cyan
 $confirmIni = Read-Host "[y] - [n]"
