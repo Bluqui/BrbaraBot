@@ -16,7 +16,7 @@ if ($confirmSlashDeploy -eq 'Y') {
 } else {return}
 
 Write-Host "Iniciar?" -ForegroundColor Cyan
-$confirmSlashDeploy = Read-Host "[y] - [n]"
+$confirmIni = Read-Host "[y] - [n]"
 if ($confirmIni -eq 'Y') {
     Write-Host "Iniciando..."
     node .\main\index.js
