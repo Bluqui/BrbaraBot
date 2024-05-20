@@ -21,5 +21,5 @@ if ($confirmIni -eq 'Y') {
     Write-Host "Iniciando..."
     node .\main\index.js
 } elseif ($confirmIni -eq 'N'){
-    Write-Host "Não iniciado"
+    Write-Host "Inicialização cacelada"
 } else {return}
