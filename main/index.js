@@ -1,7 +1,7 @@
 // Require the necessary discord.js classes
 const fs = require('node:fs');
 const path = require('node:path');
-const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
+const { Client, Collection, Events, GatewayIntentBits, ActivityType } = require('discord.js');
 const { token } = require('../config.json');
 
 // Create a new client instance
@@ -13,6 +13,10 @@ client.commands = new Collection();
 // It makes some properties non-nullable.
 client.once(Events.ClientReady, readyClient => {
 	console.log(`Ready! Logged in as ${readyClient.user.tag}`);
+	client.user.setPresence({
+		activities: [{ name: `aos seus comandos!`, type: ActivityType.Listening }],
+		status: 'ABACATE',
+	  });
 });
 
 const foldersPath = path.join(__dirname, 'commands');
@@ -54,6 +58,39 @@ client.on(Events.InteractionCreate, async interaction => {
 		}
 	}
 });
+
+
+let statusCont = 0
+const status = [
+	{ name: `aos seus comandos!`, type: ActivityType.Listening }, 
+	{ name: `Também sou usado de cobaia de testes`, type: ActivityType.Custom },
+	{ name: `você! (te dando asisstência)`, type: ActivityType.Watching },
+	{ name: `Há uma chance deu cair agora`, type: ActivityType.Custom },
+	{ name: `dados pra você!`, type: ActivityType.Streaming },
+	{ name: `Não esqueça de seguir-nos!`, type: ActivityType.Custom },
+	{ name: `JavaScript! :D`, type: ActivityType.Playing },
+	{ name: `Já conhece nosso Telegram?`, type: ActivityType.Custom },
+	{ name: `prol da ordem!`, type: ActivityType.Competing },
+	{ name: `Estamos produzindo pra você!`, type: ActivityType.Custom }
+]
+
+function changeStatus() {
+	client.user.setPresence({
+		activities: [status[statusCont]],
+		status: '',
+	});
+	if(statusCont >= status.length-1){
+		statusCont = 0
+	} else {statusCont++}
+}
+
+function checkSleepyTime() {
+    changeStatus();
+}
+
+setInterval(checkSleepyTime, 60 * 1000);
+
+
 
 // Log in to Discord with your client's token
 client.login(token);
