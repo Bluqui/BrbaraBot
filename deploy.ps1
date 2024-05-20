@@ -1,4 +1,4 @@
-Write-Host "Adicionando './'" -ForegroundColor Cyan
+Write-Host "Adicionando todos os arquivos" -ForegroundColor Cyan
 git add ./
 Write-Host "`nFazendo Commit" -ForegroundColor Blue
 git commit -m "0.1.0"
@@ -26,4 +26,4 @@ do {
     } elseif ($confirmIni -eq 'N'){
         Write-Host "Inicialização cacelada"
     } else {}
-} while ($confirmSlashDeploy -ne 'Y' -and $confirmSlashDeploy -ne 'N')
+} while ($confirmIn -ne 'Y' -and $confirmIn -ne 'N')
