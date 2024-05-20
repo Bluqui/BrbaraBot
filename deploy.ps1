@@ -6,8 +6,8 @@ Write-Host "`nDando o Push" -ForegroundColor DarkBlue
 git push
 Write-Host "`n"
 
-Write-Host "Registrar os ShashCommands? [y] - [n]" -ForegroundColor Cyan
-$confirmSlashDeploy = Read-Host ""
+Write-Host "Registrar os ShashCommands?" -ForegroundColor Cyan
+$confirmSlashDeploy = Read-Host "[y] - [n]"
 if ($confirmSlashDeploy -eq 'Y') {
     Write-Host "Registrando ShashCommands..."
     node .\main\deploy-commands.js
@@ -15,8 +15,8 @@ if ($confirmSlashDeploy -eq 'Y') {
     Write-Host "Registro cancelado"
 } else {return}
 
-Write-Host "Iniciar? [y] - [n]" -ForegroundColor Cyan
-$confirmSlashDeploy = Read-Host ""
+Write-Host "Iniciar?" -ForegroundColor Cyan
+$confirmSlashDeploy = Read-Host "[y] - [n]"
 if ($confirmIni -eq 'Y') {
     Write-Host "Iniciando..."
     node .\main\index.js
