@@ -17,7 +17,7 @@ if ($confirmSlashDeploy -eq 'Y') {
 $confirmSlashDeploy = Read-Host "Iniciar? [y] - [n]"
 if ($confirmIni -eq 'Y') {
     Write-Host "Iniciando..."
-    node .
+    node ./main/index.js
 } elseif ($confirmIni -eq 'N'){
     Write-Host "Inicialização cancelada"
 } else {return}
