@@ -10,7 +10,6 @@ module.exports = {
 				.setDescription('A mensagem pra repetir'))
 		.setDefaultMemberPermissions(PermissionFlagsBits.BanMembers)
 		.setDMPermission(false),
-
     async execute(interaction) {
         const message = interaction.options.getString('message') ?? 'No reason provided';
 
