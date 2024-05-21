@@ -11,9 +11,9 @@ module.exports = {
 		.setDefaultMemberPermissions(PermissionFlagsBits.BanMembers)
 		.setDMPermission(false),
 
-        async execute(interaction) {
-            const message = interaction.options.getString('message') ?? 'No reason provided';
-    
-            await interaction.reply(`${message}`);
-        },
+    async execute(interaction) {
+        const message = interaction.options.getString('message') ?? 'No reason provided';
+
+        await interaction.reply(`${message}`);
+    },
 };
