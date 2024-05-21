@@ -1,9 +1,22 @@
-const wait = require('node:timers/promises').setTimeout;
+const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 
-client.on(Events.InteractionCreate, async interaction => {
-	if (!interaction.isChatInputCommand()) return;
+module.exports = {
+	data: new SlashCommandBuilder()
+		.setName('echo')
+		.setDescription('Repete sua mensagem')
+		.addStringOption(option =>
+			option
+				.setName('message')
+				.setDescription('A mensagem pra repetir'))
+		.setDefaultMemberPermissions(PermissionFlagsBits.BanMembers)
+		.setDMPermission(false),
+};
 
-	if (interaction.commandName === 'echo') {
-		await interaction.reply('echo');
-	}
-});
+module.exports = {
+	// data: new SlashCommandBuilder()...
+	async execute(interaction) {
+        const message = interaction.options.getString('message') ?? 'No reason provided';
+
+		await interaction.reply(`${message}`);
+	},
+};
