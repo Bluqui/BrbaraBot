@@ -22,7 +22,7 @@ do {
     $confirmIni = Read-Host "[y] - [n]"
     if ($confirmIni -eq 'Y') {
         Write-Host "Iniciando..."
-        node .\main\index.js
+        nodemon /main/index.js
     } elseif ($confirmIni -eq 'N'){
         Write-Host "Inicialização cacelada"
     } else {}
