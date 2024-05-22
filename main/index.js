@@ -70,7 +70,7 @@ setInterval(checkSleepyTime, 60 * 1000);
 client.login(process.env.DISCORD_TOKEN);
 
 
-const bot = new Telegraf(process.env.TELEGRAM_TOKEM)
+const bot = new Telegraf(process.env.TELEGRAM_TOKEN)
 bot.launch()
 console.log("Telegram Bot is Online!")
 
