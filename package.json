@@ -1,6 +1,6 @@
 {
   "name": "barbarabot",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "bot geral",
   "main": "./main/index.js",
   "scripts": {
@@ -18,7 +18,8 @@
   "homepage": "https://github.com/Bluqui/BrbaraBot#readme",
   "dependencies": {
     "discord.js": "^14.15.2",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "telegraf": "^4.16.3"
   },
   "devDependencies": {
     "eslint": "^9.3.0"
