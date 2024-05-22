@@ -9,5 +9,8 @@ module.exports = {
 			activities: [{ name: `aos seus comandos!`, type: ActivityType.Listening }],
 			status: 'ABACATE',
 		});
+		async function telegramBot() {
+			'../utility/telegramSender.js'
+		}
 	},
 };

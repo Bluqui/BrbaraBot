@@ -1,7 +1,8 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, GatewayIntentBits, ActivityType } = require('discord.js');
-const { token } = require('../config.json');
+const { Telegraf } = require('telegraf')
+const { token, tokenTele } = require('../config.json');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
@@ -67,3 +68,12 @@ function checkSleepyTime() {
 setInterval(checkSleepyTime, 60 * 1000);
 
 client.login(token);
+
+
+const bot = new Telegraf(tokenTele)
+bot.launch()
+console.log("Telegram Bot is Online!")
+
+// Enable graceful stop
+process.once('SIGINT', () => bot.stop('SIGINT'))
+process.once('SIGTERM', () => bot.stop('SIGTERM'))
