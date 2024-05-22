@@ -26,7 +26,7 @@ for (const folder of commandFolders) {
 }
 
 // Construct and prepare an instance of the REST module
-const rest = new REST().setToken(process.env.TELEGRAM_TOKEM);
+const rest = new REST().setToken(process.env.DISCORD_TOKEM);
 
 // and deploy your commands!
 (async () => {
