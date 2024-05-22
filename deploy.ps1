@@ -14,7 +14,7 @@ git add ./
 Write-Host "`nFazendo Commit" -ForegroundColor Blue
 git commit -m "0.2.0"
 Write-Host "`nDando o Push" -ForegroundColor DarkBlue
-git push origin main
+git push -u origin main
 Write-Host "`n"
 
 Write-Host "Iniciar?" -ForegroundColor Cyan
