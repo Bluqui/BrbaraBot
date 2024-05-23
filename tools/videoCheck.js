@@ -7,34 +7,11 @@ const path = require('path');
 
 module.exports = (client, bot) => {
 	client.videoCheck = async () => {
-        let data;
-
-        try {
-            data = await parser.parseURL('https://youtube.com/feeds/videos.xml?channel_id=UC_1LM6bRLPtFWfEm7_klEtQ');
-			
-        } catch (error) {
-            console.error('Failed to fetch the RSS feed:', error);
-            return;
-        }
-
-        // Adicione logs para verificar a estrutura de `data`
-        //console.log('RSS feed data:', data);
-
-        if (!data || !data.items || data.items.length === 0) {
-            console.error('No items found in the RSS feed');
-            return;
-        }
+        const data = await parser.parseURL('https://youtube.com/feeds/videos.xml?channel_id=UC_1LM6bRLPtFWfEm7_klEtQ');
 
         const filePath = path.join(__dirname, 'video.json');
-        let jsonData;
-
-        try {
-            const rawData = fs.readFileSync(filePath, 'utf8');
-            jsonData = JSON.parse(rawData);
-        } catch (error) {
-            console.error('Failed to read or parse video.json:', error);
-            return; 
-        }
+		const rawData = fs.readFileSync(filePath, 'utf8');
+		const jsonData = JSON.parse(rawData);
 
 		if (jsonData.id !== data.items[0].id) {
 			// New video or video not sent
@@ -71,10 +48,10 @@ module.exports = (client, bot) => {
 
 			await channel.send({ embeds: [embed] })
             .then(async message => {
-                console.log("/nNovo vídeo detectado. Enviado notificação no Discord e Telegram");
+                console.log(`\nNovo vídeo detectado. Enviado notificação no Discord e Telegram`);
 
                 // Enviando mensagem para o chat do Telegram usando a instância do bot do Telegraf
-                await bot.telegram.sendMessage(-1001742331684, `Saiu vídeo novo lá na Studio Caudas! Bora lá conferir ^^\nhttps://youtu.be/r5PV5f-IYF0?si=m-qZkeNozHmhEmvJ`);
+                //await bot.telegram.sendMessage(-1001742331684, `Saiu vídeo novo lá na Studio Caudas! Bora lá conferir ^^\nhttps://youtu.be/r5PV5f-IYF0?si=m-qZkeNozHmhEmvJ`);
             })
             .catch(console.error);
 		}
