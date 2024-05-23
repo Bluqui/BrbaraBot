@@ -41,16 +41,17 @@ module.exports = (client, bot) => {
 			fs.writeFileSync(filePath, JSON.stringify({ id: data.items[0].id }));
 
 			const guild = await client.guilds
-				.fetch('1242439113131692062') //508850110969413632
+				.fetch('508850110969413632') 
 				.catch(console.error);
 
 			const channel = await guild.channels
-				.fetch('1243203472673865740') //1041581919688720467
+				.fetch('1041581919688720467') 
 				.catch(console.error);
 
 			const { title, link, id, author } = data.items[0];
 			const embed = new EmbedBuilder({
 				title: title,
+				description: "Saiu vídeo novo lá na Studio Caudas! Bora lá conferir ^^",
 				url: link,
 				timestamp: Date.now(),
 				image: {
@@ -70,7 +71,7 @@ module.exports = (client, bot) => {
 
 			await channel.send({ embeds: [embed] })
             .then(async message => {
-                console.log("Novo vídeo detectado. Enviado notificação no Discord e Telegram");
+                console.log("/nNovo vídeo detectado. Enviado notificação no Discord e Telegram");
 
                 // Enviando mensagem para o chat do Telegram usando a instância do bot do Telegraf
                 await bot.telegram.sendMessage(-1001742331684, `Saiu vídeo novo lá na Studio Caudas! Bora lá conferir ^^\nhttps://youtu.be/r5PV5f-IYF0?si=m-qZkeNozHmhEmvJ`);
