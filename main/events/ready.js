@@ -10,6 +10,6 @@ module.exports = {
 			status: 'dnd', // 'ABACATE' não é um status válido, use 'online', 'idle', 'dnd'
 		});
 
-		//setTimeout(() => client.videoCheck(), 5 * 1000);
+		setInterval(() => client.videoCheck(), 5 * 1000);
 	},
 };

@@ -37,7 +37,7 @@ for (const file of eventFiles) {
 	}
 }
 
-require('../utility/videoCheck')(client);
+require('../tools/videoCheck')(client);
 
 let statusCont = 0
 const status = [

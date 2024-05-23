@@ -9,14 +9,15 @@ module.exports = (client) => {
         let data;
 
         try {
-            data = await parser.parseURL('https://youtube.com/feeds/videos.xml?channel_id=UCglwIrtG0MSqp8F6E2Z4iqg');
+            data = await parser.parseURL('https://youtube.com/feeds/videos.xml?channel_id=UC_1LM6bRLPtFWfEm7_klEtQ');
+			
         } catch (error) {
             console.error('Failed to fetch the RSS feed:', error);
             return;
         }
 
         // Adicione logs para verificar a estrutura de `data`
-        console.log('RSS feed data:', data);
+        //console.log('RSS feed data:', data);
 
         if (!data || !data.items || data.items.length === 0) {
             console.error('No items found in the RSS feed');
@@ -39,11 +40,11 @@ module.exports = (client) => {
 			fs.writeFileSync(filePath, JSON.stringify({ id: data.items[0].id }));
 
 			const guild = await client.guilds
-				.fetch('1242439113131692062')
+				.fetch('1242439113131692062') //508850110969413632
 				.catch(console.error);
 
 			const channel = await guild.channels
-				.fetch('1242448995670822974')
+				.fetch('1243203472673865740') //1041581919688720467
 				.catch(console.error);
 
 			const { title, link, id, author } = data.items[0];
@@ -67,6 +68,7 @@ module.exports = (client) => {
 			});
 
 			await channel.send({ embeds: [embed] }).catch(console.error);
+			console.log("ENvicando MENSGEM")
 		}
 	};
 };
