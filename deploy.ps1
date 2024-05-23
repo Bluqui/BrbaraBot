@@ -17,9 +17,9 @@ if(!$y) {
     } while ($confirmSlashDeploy -ne 'Y' -and $confirmSlashDeploy -ne 'N')
 
 
-    Write-Host "Adicionando todos os arquivos" -ForegroundColor Cyan
+    Write-Host "`nAdicionando todos os arquivos..." -ForegroundColor Cyan
     git add ./
-    Write-Host "`nFazendo Commit" -ForegroundColor Blue
+    Write-Host "Fazendo Commit" -ForegroundColor Blue
     git commit -m "0.2.0"
     Write-Host "`nDando o Push" -ForegroundColor DarkBlue
     git push origin HEAD:two
@@ -53,5 +53,5 @@ if(!$y) {
     Write-Host "Iniciando..."
     nodemon /main/index.js
 
-    
+
 }
