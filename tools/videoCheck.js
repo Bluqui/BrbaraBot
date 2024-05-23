@@ -51,7 +51,7 @@ module.exports = (client, bot) => {
                 console.log(`\nNovo vídeo detectado. Enviado notificação no Discord e Telegram`);
 
                 // Enviando mensagem para o chat do Telegram usando a instância do bot do Telegraf
-                //await bot.telegram.sendMessage(-1001742331684, `Saiu vídeo novo lá na Studio Caudas! Bora lá conferir ^^\nhttps://youtu.be/r5PV5f-IYF0?si=m-qZkeNozHmhEmvJ`);
+                await bot.telegram.sendMessage(-1001742331684, `Saiu vídeo novo lá na Studio Caudas! Bora lá conferir ^^\nhttps://youtu.be/r5PV5f-IYF0?si=m-qZkeNozHmhEmvJ`);
             })
             .catch(console.error);
 		}
