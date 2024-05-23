@@ -73,6 +73,7 @@ client.login(process.env.DISCORD_TOKEN);
 
 
 const bot = new Telegraf(process.env.TELEGRAM_TOKEN)
+require('../tools/videoCheck')(client, bot); // Passando a instância do bot do Telegraf
 bot.launch()
 console.log("Telegram Bot is Online!")
 
