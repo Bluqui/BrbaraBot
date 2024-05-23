@@ -20,9 +20,9 @@ if(!$y) {
     Write-Host "`nAdicionando todos os arquivos..." -ForegroundColor Cyan
     git add ./
     Write-Host "Fazendo Commit" -ForegroundColor Blue
-    git commit -m "0.2.0"
+    git commit -m "0.3.0"
     Write-Host "`nDando o Push" -ForegroundColor DarkBlue
-    git push origin HEAD:two
+    git push origin HEAD:three
 
 
     Write-Host "Iniciar?" -ForegroundColor Cyan
@@ -46,9 +46,9 @@ if(!$y) {
     Write-Host "Adicionando todos os arquivos" -ForegroundColor Cyan
     git add ./
     Write-Host "`nFazendo Commit" -ForegroundColor Blue
-    git commit -m "0.2.0"
+    git commit -m "0.3.0"
     Write-Host "`nDando o Push" -ForegroundColor DarkBlue
-    git push origin HEAD:two
+    git push origin HEAD:three
 
     Write-Host "Iniciando..."
     nodemon --ignore /tools/video.json /main/index.js

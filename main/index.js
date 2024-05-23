@@ -2,6 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, GatewayIntentBits, ActivityType } = require('discord.js');
 const { Telegraf } = require('telegraf')
+const { message } = require('telegraf/filters')
 require("dotenv").config()
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
