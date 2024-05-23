@@ -51,7 +51,7 @@ if(!$y) {
     git push origin HEAD:two
 
     Write-Host "Iniciando..."
-    nodemon /main/index.js
+    nodemon --ignore /tools/video.json /main/index.js
 
 
 }
