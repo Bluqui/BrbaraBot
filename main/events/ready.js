@@ -7,10 +7,9 @@ module.exports = {
 		console.log(`Ready! Logged in as ${client.user.tag}`);
 		client.user.setPresence({
 			activities: [{ name: `aos seus comandos!`, type: ActivityType.Listening }],
-			status: 'ABACATE',
+			status: 'dnd', // 'ABACATE' não é um status válido, use 'online', 'idle', 'dnd'
 		});
-		async function telegramBot() {
-			'../utility/telegramSender.js'
-		}
+
+		//setTimeout(() => client.videoCheck(), 5 * 1000);
 	},
 };

@@ -37,6 +37,8 @@ for (const file of eventFiles) {
 	}
 }
 
+require('../utility/videoCheck')(client);
+
 let statusCont = 0
 const status = [
 	{ name: `aos seus comandos!`, type: ActivityType.Listening }, 
