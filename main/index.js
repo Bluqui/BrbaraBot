@@ -39,6 +39,7 @@ for (const file of eventFiles) {
 }
 
 require('../tools/videoCheck')(client);
+require('../tools/twitchLiveCheck')(client);
 
 let statusCont = 0
 const status = [
@@ -75,6 +76,7 @@ client.login(process.env.DISCORD_TOKEN);
 
 const bot = new Telegraf(process.env.TELEGRAM_TOKEN)
 require('../tools/videoCheck')(client, bot);
+require('../tools/twitchLiveCheck')(client, bot);
 bot.command('getid', (ctx) => ctx.reply(`ID: ${ctx.message.chat.id}`))
 
 function launchBot() {
