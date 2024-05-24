@@ -74,8 +74,17 @@ client.login(process.env.DISCORD_TOKEN);
 
 
 const bot = new Telegraf(process.env.TELEGRAM_TOKEN)
-require('../tools/videoCheck')(client, bot); // Passando a instância do bot do Telegraf
-bot.launch()
+require('../tools/videoCheck')(client, bot);
+bot.command('getid', (ctx) => ctx.reply(`ID: ${ctx.message.chat.id}`))
+
+function launchBot() {
+	bot.launch().then(() => {
+	}).catch((err) => {
+		console.error('Failed to launch the bot:', err);
+		setTimeout(launchBot, 30000);
+	});
+}
+launchBot();
 console.log("Telegram Bot is Online!")
 
 // Enable graceful stop

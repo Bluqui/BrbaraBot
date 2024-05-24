@@ -46,11 +46,19 @@ module.exports = (client, bot) => {
 				},
 			});
 
+			
+			const canalDoLunar = -1001156955497
+			const furryArteRPG = -1001384735750
+			const studioCaudas = -1001334148893
+			const comentarioChamada = `Saiu vídeo novo lá na Studio Caudas! Bora lá conferir ^^\n${link}`
+
 			await channel.send({ content: "@everyone", embeds: [embed] })
             .then(async message => {
                 console.log(`\nNovo vídeo detectado. Enviado notificação no Discord e Telegram`);
 
-                await bot.telegram.sendMessage(-1001742331684, `Saiu vídeo novo lá na Studio Caudas! Bora lá conferir ^^\nhttps://youtu.be/r5PV5f-IYF0?si=m-qZkeNozHmhEmvJ`);
+				await bot.telegram.sendMessage(canalDoLunar, comentarioChamada);
+				await bot.telegram.sendMessage(furryArteRPG, comentarioChamada);
+				await bot.telegram.sendMessage(studioCaudas, comentarioChamada);
             })
             .catch(console.error);
 		}
