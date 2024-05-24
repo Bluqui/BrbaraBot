@@ -1,6 +1,6 @@
 {
   "name": "studio_caudas_bot",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "bot geral",
   "main": "./main/index.js",
   "scripts": {
