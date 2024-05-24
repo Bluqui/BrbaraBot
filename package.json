@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bluqui/BrbaraBot.git"
+    "url": "git+https://github.com/Bluqui/Studio_Caudas_Bot.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Bluqui/BrbaraBot/issues"
+    "url": "https://github.com/Bluqui/Studio_Caudas_Bot/issues"
   },
-  "homepage": "https://github.com/Bluqui/BrbaraBot#readme",
+  "homepage": "https://github.com/Bluqui/Studio_Caudas_Bot#readme",
   "dependencies": {
     "discord.js": "^14.15.2",
     "dotenv": "^16.4.5",
