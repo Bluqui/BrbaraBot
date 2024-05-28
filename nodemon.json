@@ -1,0 +1,14 @@
+{
+    "watch": ["./"],
+    "ext": "js,json",
+    "ignore": ["/tools/video.json"],
+    "delay": "2500",
+    "restartable": "rs",
+    "env": {
+      "NODE_ENV": "development"
+    },
+    "args": [],
+    "script": "main/index.js",
+    "exitcrash": false
+  }
+  

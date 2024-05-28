@@ -30,7 +30,7 @@ if(!$y) {
         $confirmIni = Read-Host "[y] - [n]"
         if ($confirmIni -eq 'Y') {
             Write-Host "Iniciando..."
-            nodemon --ignore /tools/video.json /main/index.js
+            nodemon
         } elseif ($confirmIni -eq 'N'){
             Write-Host "Inicialização cacelada"
         } else {}
@@ -51,7 +51,6 @@ if(!$y) {
     git push origin HEAD:four
 
     Write-Host "Iniciando..."
-    nodemon --ignore /tools/video.json /main/index.js
-
+    nodemon
 
 }
