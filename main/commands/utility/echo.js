@@ -7,7 +7,8 @@ module.exports = {
 		.addStringOption(option =>
 			option
 				.setName('message')
-				.setDescription('A mensagem pra repetir'))
+				.setDescription('A mensagem pra repetir')
+				.setRequired(true))
 		.setDefaultMemberPermissions(PermissionFlagsBits.BanMembers)
 		.setDMPermission(false),
     async execute(interaction) {
