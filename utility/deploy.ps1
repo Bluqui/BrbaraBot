@@ -10,7 +10,7 @@ if(!$y) {
         $confirmSlashDeploy = Read-Host "[y] - [n]"
         if ($confirmSlashDeploy -eq 'Y') {
             Write-Host "Registrando ShashCommands..."
-            node .\utility\deploy-commands.js
+            node .\main\deploy-commands.js
         } elseif ($confirmSlashDeploy -eq 'N'){
             Write-Host "Registro cancelado"
         } else {}
@@ -41,7 +41,7 @@ if(!$y) {
 
 
     Write-Host "Registrando ShashCommands..."
-    node .\utility\deploy-commands.js
+    node .\main\deploy-commands.js
 
     Write-Host "Adicionando todos os arquivos" -ForegroundColor Cyan
     git add ./
