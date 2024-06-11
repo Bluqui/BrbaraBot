@@ -32,7 +32,7 @@ if(!$y) {
             Write-Host "Iniciando..."
             nodemon
         } elseif ($confirmIni -eq 'N'){
-            Write-Host "InicializaÃ§Ã£o cacelada"
+            Write-Host "Inicialização cacelada"
         } else {}
     } while ($confirmIni -ne 'Y' -and $confirmIni -ne 'N')
 
