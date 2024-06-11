@@ -40,7 +40,7 @@ if(!$y) {
         if ($confirmIni -eq 'Y') {
             inicializar
         } elseif ($confirmIni -eq 'N'){
-            Write-Host "Inicializaï¿½ï¿½o cacelada"
+            Write-Host "Inicialização cacelada"
         } else {}
     } while ($confirmIni -ne 'Y' -and $confirmIni -ne 'N')
 
