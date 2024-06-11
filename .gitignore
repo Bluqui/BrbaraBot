@@ -1,4 +1,5 @@
 .env
 .eslintrc
 config.json
-/tools/video.json
+tools/video.json
+utility/watchdogs2.ps1

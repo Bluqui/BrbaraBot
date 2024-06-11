@@ -4,8 +4,8 @@ const { EmbedBuilder } = require('discord.js');
 module.exports = (client, bot) => {
     client.twitchLiveCheck = async () => {
         try {
-            const guild = await client.guilds.fetch('790241446992019467').catch(console.error); //508850110969413632
-            const channel = await guild.channels.fetch('790241447676215319').catch(console.error); //1041581919688720467
+            const guild = await client.guilds.fetch('1242439113131692062').catch(console.error); //508850110969413632
+            const channel = await guild.channels.fetch('1041581919688720467').catch(console.error); //1041581919688720467
 
             const twitch = new Twitch({
                 channels: ['studiocaudas'],
