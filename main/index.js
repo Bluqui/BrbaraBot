@@ -77,7 +77,7 @@ client.login(process.env.DISCORD_TOKEN);
 const bot = new Telegraf(process.env.TELEGRAM_TOKEN)
 require('../tools/videoCheck')(client, bot);
 require('../tools/twitchLiveCheck')(client, bot);
-require('../tools/shout')(client, bot);
+require('../tools/sender')(client, bot);
 bot.command('getid', (ctx) => ctx.reply(`ID: ${ctx.message.chat.id}`))
 
 function launchBot() {
