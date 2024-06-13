@@ -8,11 +8,11 @@ const ultimaLive = null
 module.exports = (client, bot) => {
     client.twitchLiveCheck = async () => {
         try {
-            const guild = await client.guilds.fetch('790241446992019467').catch(console.error); //508850110969413632
-            const channel = await guild.channels.fetch('790241447676215319').catch(console.error); //1041581919688720467
+            const guild = await client.guilds.fetch('508850110969413632').catch(console.error); //508850110969413632
+            const channel = await guild.channels.fetch('1041581919688720467').catch(console.error); //1041581919688720467
 
             const twitch = new Twitch({
-                channels: ['ralisco'],
+                channels: ['studiocaudas'],
                 liveChannels: [],
                 interval: 10000,
                 client: {
@@ -65,7 +65,7 @@ module.exports = (client, bot) => {
                     }
     
                     channel.send({ content: "@everyone", embeds: [embed] })
-                    /*.then(async message => {
+                    .then(async message => {
                     console.log(`\nNova live na Twitch detectada. Enviado notificação no Discord e Telegram`);
     
                     await bot.telegram.sendPhoto(canalDoLunar, stream.thumbnail_url.replace('{width}', '640').replace('{height}', '360'), comentarioChamada)
@@ -74,7 +74,7 @@ module.exports = (client, bot) => {
                     .catch(console.error);
                     await bot.telegram.sendPhoto(studioCaudas, stream.thumbnail_url.replace('{width}', '640').replace('{height}', '360'), comentarioChamada)
                     .catch(console.error);
-                    }).catch(console.error);*/
+                    }).catch(console.error);
 
                 }
 
