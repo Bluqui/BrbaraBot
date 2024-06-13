@@ -15,18 +15,21 @@ module.exports = {
                 )),
 	async execute(interaction) {
 		const tipoEscolhido = interaction.options.getString('formato')
-        const collectorFilter = m => m.content.includes('a')
-        const collector = interaction.channel.createMessageCollector({ time: 5_000 });
 
-        await interaction.reply(`Você escolheu ${tipoEscolhido}.\nEnvie a mensagem que será divulgada`)
 
-        collector.on('collect', m => {
-            console.log(`Collected ${m.content}`);
-        });
-        
-        collector.on('end', collected => {
-            console.log(`Collected ${collected.size} items`);
-        });
+        interaction.reply({ content: `Você escolheu ${tipoEscolhido}.\nEnvie a mensagem que será divulgada`, fetchReply: true })
+	    .then(() => {
+            interaction.channel.awaitMessages({ max: 1, time: 10_000, errors: ['time'] })
+            .then(collected => {
+                console.log("A")
+                interaction.followUp(`${collected.first().author} teste`);
+            })
+            .catch(collected => {
+                interaction.followUp('Timeout.');
+            });
+    	});
+
+
 
         /*await interaction.followUp({ content: `Você escolheu ${tipoEscolhido}.\nEnvie a mensagem que será divulgada`, fetchReply: true} )
         .then( () => {

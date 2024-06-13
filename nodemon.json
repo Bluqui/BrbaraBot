@@ -1,7 +1,7 @@
 {
     "watch": ["./"],
     "ext": "js,json",
-    "ignore": ["/tools/video.json"],
+    "ignore": ["/tools/video.json", "/tools/live.json"],
     "delay": "2500",
     "restartable": "rs",
     "env": {
