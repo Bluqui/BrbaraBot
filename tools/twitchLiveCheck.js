@@ -69,11 +69,8 @@ module.exports = (client, bot) => {
                     console.log(`\nNova live na Twitch detectada. Enviado notificação no Discord e Telegram`);
     
                     await bot.telegram.sendPhoto(canalDoLunar, stream.thumbnail_url.replace('{width}', '640').replace('{height}', '360'), comentarioChamada)
-                    .catch(console.error);
                     await bot.telegram.sendPhoto(furryArteRPG, stream.thumbnail_url.replace('{width}', '640').replace('{height}', '360'), comentarioChamada)
-                    .catch(console.error);
                     await bot.telegram.sendPhoto(studioCaudas, stream.thumbnail_url.replace('{width}', '640').replace('{height}', '360'), comentarioChamada)
-                    .catch(console.error);
                     }).catch(console.error);
 
                 }
